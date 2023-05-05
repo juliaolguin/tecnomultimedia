@@ -9,7 +9,7 @@ void setup (){
   size(640,480);
   fill(0);
   pantalla = 1 ;
-  fuente = loadFont("TwCenMT-Regular-48.vlw");
+  fuente = loadFont("LucidaFax-10.vlw");
   posY = 30;
   velY = 5;
     
