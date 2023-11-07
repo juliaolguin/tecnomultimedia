@@ -1,20 +1,23 @@
-//jugador (AURORA )
+// (principe)
 class jugador {
-  constructor () {
+  constructor (posX,posY) {
     this.DERECHA = "DERECHA"
-      this.IZQUIERDA = "IZQUIERDA"
-      this.ARRIBA = "ARRIBA"
-      this.posX = 200
-      this.posY = 540
-      this.PrincipeDer = ImgJugadorDer;
+    this.IZQUIERDA = "IZQUIERDA"
+    this.ARRIBA = "ARRIBA"
+    this.posX = posX
+    this.posY = posY
+    this.PrincipeDer = ImgJugadorDer;
     this.PrincipeIzq = ImgJugadorDer;
     this.Dire = this.DERECHA;
+    
+    this.puntos =0 ; 
   }
   dibujar() {
+
     if (this.dire == "DERECHA") {
-      image(ImgJugadorDer, this.posX, this.posY,42,52);
+      image(ImgJugadorDer, this.posX, this.posY, 50, 50);
     } else if (this.dire == "IZQUIERDA") {
-      image(ImgJugadorIzq, this.posX, this.posY,60, 60);
+      image(ImgJugadorIzq, this.posX, this.posY, 50, 50);
     }
   }
 
@@ -31,32 +34,25 @@ class jugador {
       this.posX -= 10;
     }
   }
-  moverArriba () {
+  moverArriba() {
+    if(keyIsDown(UP_ARROW))  {
+    this.dire = "ARRIBA";
     this.posY -= 40;
-   
+    this.puntos +=  10
+    } 
   }
-  //mover() {
-  //  if (direccion == DERECHA) {
-  //    image(this.PrincioeDer, posX, posY, 40, 60);
-  //  } else if (direccion == IZQUIERDA) {
-  //    image(this.PrincipeIzq, posX, posY, 40, 60);
-  //  
 
 
   teclaPresionada() {
-    if (keyCode == LEFT_ARROW) {
-      this.posX -= 10;
-    } else if (keyCode == RIGHT_ARROW) {
-      this.dire = "DERECHA"
-        this.posX += 10;
-    } else if (keyCode == UP_ARROW) {
-      this.dire = "IZQUIERDA"
-        this.posY -= 10;
-    }
+    if (keyCode === LEFT_ARROW) {
+    Objuego.jugador.moverIzquierda();
+  } else if (keyCode === RIGHT_ARROW) {
+    Objuego.jugador.moverDerecha();
+  } else if (keyCode === UP_ARROW) {
+    Objuego.jugador.moverArriba();
+  }
   }
 
 
-  //pierdeJugador()  {
-
-  //}
+  //cuando dibujar al perder ?
 }

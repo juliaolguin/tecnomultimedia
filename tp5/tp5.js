@@ -1,45 +1,46 @@
+ 
 
-//determianr variables 
-//OBEJETOS
+//OBJETOS
+
 let Objuego;
+
 //IMAGENES
-//let ImgFondo
 let ImgJugadorDer, ImgJugadorIzq;
-let ImgCastillo;
-let ImgArbol, ImgCamion,ImgAutoRosa;
-let ImgArvol
+let ImgCastillo,ImgFondo,ImgFondoPasto;
+let ImgArbol, ImgCamion, ImgAutoRosa, ImgDragon, ImgCuervo, ImgArbolConPalo, ImgCartin;
 
-function preload ()  {
-//imagenes con variables 
-ImgJugadorDer = loadImage("data/PrincipeDerecha.png")
-ImgJugadorIzq = loadImage("data/PrincipeIzquierda.jpg")
-ImgArbol = loadImage("data/arbol.png")
-ImgArvol = loadImage("data/arvol.jpg");
-ImgAutoRosa = loadImage("data/autoRosa.png");
-ImgCamion= loadImage("data/camion.png");
-
-//ImgFondo = loadImage("data/fondo.jpg");
-ImgCastillo = loadImage ("data/castillo.png");
-ImgCuervo =  loadImage ("data/cuervo.jpg")
+function preload () {
+  //imagenes con variables
+  ImgFondoPasto = loadImage("data/fondoPasto.jpg")
+  ImgJugadorDer = loadImage("data/PrincipeDerecha.png")
+    ImgJugadorIzq = loadImage("data/PrincipeIzquierda.png")
+    ImgFondo = loadImage("data/fondo.png")
+    ImgArbol = loadImage("data/arbol.png")
+    ImgArbolConPalo = loadImage("data/arvol.jpg");
+  ImgAutoRosa = loadImage("data/autoRosa.png");
+  ImgCamion= loadImage("data/camion.png");
+  ImgDragon = loadImage("data/dragon.png");
+  ImgCuervo = loadImage("data/cuervo.jpg");
+  ImgCartin =loadImage("data/cartinAmarillo.png");
+ // ImgCastillo = loadImage ("data/castiloo.jpg");
+  ImgTractor = loadImage("data/tractor.png");
 }
 function setup() {
+  //dibujar todo
+  createCanvas(600, 600);
+  Objuego = new juego ();
+  
 
-createCanvas(600,600);
-Objuego = new juego ();
 }
-
 
 function draw() {
- background(255);
-Objuego.dibujar();
-
+  //dibujar todo
+  background(255);
+  Objuego.dibujar();
+ 
 }
+//mover jugador 
 function keyPressed() {
-  if (keyCode === LEFT_ARROW) {
-    Objuego.jugador.moverIzquierda();
-  } else if (keyCode === RIGHT_ARROW) {
-    Objuego.jugador.moverDerecha();
-  } else if (keyCode === UP_ARROW) {
-    Objuego.jugador.moverArriba();
-  }
+Objuego.jugador.teclaPresionada();
+ 
 }

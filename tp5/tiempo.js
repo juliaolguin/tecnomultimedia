@@ -4,11 +4,12 @@ class tiempo {
     this.tiempoLimite = 0;
   }
   dibujar() {
-    //fill(0);
-    //textSize(25);
-    //text("tiempo:"+this.tiempo, 400, 400 );
 
-    //if (frameCount % 60 == 0 ) {
-    //  this.tiempo --;
+    if (frameCount % 60 == 0 && this.tiempo > this.tiempoLimite ) {
+      this.tiempo --;
     }
+    fill(255);
+    textSize(25);
+    text(this.tiempo, 490, 592 );
   }
+}
