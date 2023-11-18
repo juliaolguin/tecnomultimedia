@@ -8,7 +8,7 @@ let Objuego;
 let ImgJugadorDer, ImgJugadorIzq;
 let ImgCastillo,ImgFondo,ImgFondoPasto;
 let ImgArbol, ImgCamion, ImgAutoRosa, ImgDragon, ImgCuervo, ImgArbolConPalo, ImgCartin;
-
+let puntos;
 function preload () {
   //imagenes con variables
   ImgFondoPasto = loadImage("data/fondoPasto.jpg")
